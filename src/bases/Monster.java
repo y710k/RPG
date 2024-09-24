@@ -14,7 +14,6 @@ public abstract class Monster extends Living {
 	// attackメソッドのオーバーライド
 	@Override
 	public void attack(Living target) {
-		Living Target = target;
 		// 1から10までのサイコロを振り、自分の攻撃力とかけ合わせた値を相手に与えるダメージとする
 		int dice = Dice.get(1, 10);
 		int damege = dice * offensive;
@@ -23,7 +22,7 @@ public abstract class Monster extends Living {
 		target.hp -= damege;
 		
 		// コンソールにステータスを表示
-		System.out.println(name +"が"+ weapon +"で攻撃！"+ Target.name +"に"+ damege +"のダメージを与えた。");
+		System.out.println("「"+ name + "」が「"+ weapon +"」で攻撃！"+ "「" + target.name +"」に"+ damege +"のダメージを与えた。");
 		
 	}
 }
